@@ -1,8 +1,8 @@
 # LINE-Liff
 
 ### Result
-![example1](screenshot1.png)
-![example2](screenshot2.png)
+![example1](screenshot1.jpg)
+![example2](screenshot2.jpg)
 
 ### References
 
@@ -15,3 +15,5 @@
 4. [LIFF Playground](https://liff-playground.netlify.app/)
 
 5. [DAY 13 LIFF的製作](https://ithelp.ithome.com.tw/m/articles/10299652)
+
+6. [LIFF 新手玩家的路標] (https://qiita.com/leokey/items/29d750562e4a849281e1)
