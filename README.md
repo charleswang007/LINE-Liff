@@ -16,4 +16,4 @@
 
 5. [DAY 13 LIFF的製作](https://ithelp.ithome.com.tw/m/articles/10299652)
 
-6. [LIFF 新手玩家的路標] (https://qiita.com/leokey/items/29d750562e4a849281e1)
+6. [LIFF 新手玩家的路標](https://qiita.com/leokey/items/29d750562e4a849281e1)
