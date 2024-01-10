@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>查理王！飲料訂購表</title>
+    <script
+      charset="utf-8"
+      src="https://static.line-scdn.net/liff/edge/2.1/sdk.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script>
+      function initializeApp() {
+        if (liff.isLoggedIn()) {
+          getLineData();
+        } else {
+          let result = window.confirm("LINE Login confirmation");
+          if (result) {
+            liff.login();
+          }
+        }
+      }
+
+      function getLineData() {
+        liff.getProfile().then((profile) => {
+          console.log("LINE user id:" + profile.userId);
+          console.log("LINE display name:" + profile.displayName);
+          console.log("LINE picture URL:" + profile.pictureUrl);
+        });
+      }
+
+      function pushMsg(pname, amount, pdatatime, pdrink1, pdrink2) {
+        if (pname == "" || pdatatime == "" || amount == "" || pdrink1 == "" || pdrink2 == "") {
+          alert("每個項目都必須輸入！");
+          return;
+        }
+        var msg = "您的訂購：\n";
+        msg = msg + "名字：" + pname + "\n";
+        msg = msg + "數量：" + amount + "\n";
+        msg = msg + "日期：" + pdatatime + "\n";
+        msg = msg + "品項：" + pdrink1 + "\n";
+        msg = msg + "配料：" + pdrink2;
+        liff.init({ liffId: "2002734907-JYm6KjZL" }).then(() => {
+          liff
+            .sendMessages([
+              { type: "text", text: msg },
+            ])
+            .then(() => {
+              liff.closeWindow();
+            });
+        });
+      }
+
+      $(document).ready(function () {
+        window.onload = function (e) {
+          liff.init({ liffId: "2002734907-JYm6KjZL" }).then(() => {
+            initializeApp();
+          });
+        };
+        $("#sure").click(function (e) {
+          pushMsg(
+            $("#name").val(),
+            $("#amount").val(),
+            $("#datetime").val(),
+            $("#sel_drink_1").val(),
+            $("#sel_drink_2").val()
+          );
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <div class="row" style="margin: 10px">
+      <div class="col-12" style="margin: 10px">
+        <label>姓名</label>
+        <input type="text" id="name" class="form-control" />
+        <br />
+        <label>日期</label>
+        <input type="date" id="datetime" value="" class="form-control" />
+        <br />
+        <label>飲料數量</label>
+        <input type="number" id="amount" class="form-control" />
+        <br />
+        <label>品項</label>
+        <select id="sel_drink_1" class="form-control">
+          <option selected>茉莉綠茶</option>
+          <option>珍珠紅茶</option>
+          <option>紅茶拿鐵</option>
+          <option>四季春茶</option>
+          <option>冬瓜檸檬</option>
+        </select>
+        <br />
+        <label>加料</label>
+        <select id="sel_drink_2" class="form-control">
+          <option selected>無</option>
+          <option>白玉珍珠</option>
+          <option>椰果</option>
+          <option>仙草</option>
+          <option>小芋園</option>
+        </select>
+        <br />
+        <button class="btn btn-warning btn-block" id="sure">確定</button>
+      </div>
+    </div>
+  </body>
+</html>
