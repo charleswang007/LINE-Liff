@@ -17,3 +17,7 @@
 5. [DAY 13 LIFF的製作](https://ithelp.ithome.com.tw/m/articles/10299652)
 
 6. [LIFF 新手玩家的路標](https://qiita.com/leokey/items/29d750562e4a849281e1)
+
+7. [你可以用 async/await 來開發 LINE LIFF](https://taichunmin.idv.tw/blog/2020-04-16-develop-liff-with-async-await.html)
+
+8. [認識LIFF容易嗎?](https://ithelp.ithome.com.tw/users/20125193/ironman/3236?page=1)
