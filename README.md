@@ -21,3 +21,5 @@
 7. [你可以用 async/await 來開發 LINE LIFF](https://taichunmin.idv.tw/blog/2020-04-16-develop-liff-with-async-await.html)
 
 8. [認識LIFF容易嗎?](https://ithelp.ithome.com.tw/users/20125193/ironman/3236?page=1)
+
+9. [M2 X LINE LIFF設定與應用情境](https://m2line.shop/cc-38)
